@@ -1,16 +1,16 @@
-import Link from "next/link";
-import { Linkedin, Github as LucideGithub, TwitterIcon, XIcon}  from "lucide-react";
-// import XIcon from "../icons/x-icon";
-import Image from "next/image";
 
-interface ProjectLink {
-  href: string | null;
-  text: string;
-  description: string;
-  icon: string;
-  iconDark?: string;
-  isNew?: boolean;
-}
+import { Linkedin, Github as LucideGithub, TwitterIcon}  from "lucide-react";
+import Link from "next/link";
+
+
+// interface ProjectLink {
+//   href: string | null;
+//   text: string;
+//   description: string;
+//   icon: string;
+//   iconDark?: string;
+//   isNew?: boolean;
+// }
 
 export function Footer() {
   const socialLinks = [
@@ -33,11 +33,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-8 flex flex-col items-center space-y-6 text-center">
         {/* Social Links */}
         <div className="flex gap-4">
-          {/* {socialLinks.map((link, index) => (
+          {socialLinks.map((link, index) => (
             <Link key={index} href={link.href || "#"} target="_blank" rel="noopener noreferrer">
               {link.icon}
             </Link>
-          ))} */}
+          ))}
         </div>
 
         {/* Copyright Notice */}
