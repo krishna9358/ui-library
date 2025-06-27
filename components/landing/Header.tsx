@@ -1,4 +1,3 @@
-import { Link as ViewTransitionsLink } from "next-view-transitions";
 import Image from "next/image";
 import React from "react";
 import { ThemeToggle } from "../ui/theme-toggle";
@@ -59,7 +58,7 @@ const Header = () => {
               <div className="relative z-10 flex items-center  justify-between w-full gap-2">
                 {/* Logo */}
                 <div className="flex items-center gap-6 ">
-                  <ViewTransitionsLink
+                  <Link
                     href={"/"}
                     className="flex items-center gap-2"
                   >
@@ -70,16 +69,16 @@ const Header = () => {
                       alt="logo"
                     />
                     <span className="hidden sm:block   font-semibold">UI</span>
-                  </ViewTransitionsLink>
+                  </Link>
                   <span className="text-zinc-300 dark:text-zinc-700">|</span>
                   {/* Desktop Navigations */}
                   <div className="hidden sm:flex items-center gap-4">
-                    <ViewTransitionsLink
+                    <Link
                       href="/docs/components/background-paths"
                       className="text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors"
                     >
                       Components
-                    </ViewTransitionsLink>
+                    </Link>
                   </div>
                 </div>
                 {/* Right side items */}
