@@ -1,6 +1,7 @@
 
 import Header from "@/components/landing/Header";
-import Footer from "@/components/layout/Footer";
+import { Footer } from "@/components/layout/Footer";
+
 import { Metadata } from "next";
 
 
@@ -20,7 +21,7 @@ export default function HomeLayout({
     <div>
       <Header />
       <main className="relative w-full pt-0 md:pt-0">{children}</main>
-      <Footer />
+      <Footer/>
     </div>
   );
 }
