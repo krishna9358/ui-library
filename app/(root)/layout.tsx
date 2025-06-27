@@ -1,7 +1,8 @@
 
 import Header from "@/components/landing/Header";
+import Footer from "@/components/layout/Footer";
 import { Metadata } from "next";
-import { Footer } from "react-day-picker";
+
 
 export const metadata: Metadata = {
   title: {
