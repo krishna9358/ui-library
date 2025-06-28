@@ -2,13 +2,13 @@ import Image from "next/image";
 import React from "react";
 import { ThemeToggle } from "../ui/theme-toggle";
 import Link from "next/link";
-import { ArrowUpRight, PartyPopper } from "lucide-react";
+// import { ArrowUpRight, PartyPopper } from "lucide-react";
 
 const Header = () => {
   return (
     <>
       {/*  Header for Mobile  */}
-      <div className="sm:hidden w-full p-2.5 bg-white dark:bg-black/5 ">
+      {/* <div className="sm:hidden w-full p-2.5 bg-white dark:bg-black/5 ">
         <Link
           href="#"
           target="_blank"
@@ -31,7 +31,7 @@ const Header = () => {
             </div>
           </div>
         </Link>
-      </div>
+      </div> */}
 
       {/* Main header */}
       <div className="sticky top-0 left-0 right-0 z-50">
@@ -58,12 +58,9 @@ const Header = () => {
               <div className="relative z-10 flex items-center  justify-between w-full gap-2">
                 {/* Logo */}
                 <div className="flex items-center gap-6 ">
-                  <Link
-                    href={"/"}
-                    className="flex items-center gap-2"
-                  >
+                  <Link href={"/"} className="flex items-center gap-2">
                     <Image
-                      src={"/photo_svg/Logo.svg"}
+                      src={"/icons/Logo.svg"}
                       width={20}
                       height={20}
                       alt="logo"
