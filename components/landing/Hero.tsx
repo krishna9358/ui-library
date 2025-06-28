@@ -2,15 +2,15 @@
 import React from "react";
 import { motion } from "motion/react";
 import {
-  PlaneTakeoff,
-  BarChart2,
-  Video,
-  AudioLines,
-  Globe,
-  Diamond,
+//   PlaneTakeoff,
+//   BarChart2,
+//   Video,
+//   AudioLines,
+//   Globe,
+//   Diamond,
   Sparkles,
-  Code,
-  Layers,
+//   Code,
+//   Layers,
 } from "lucide-react";
 import { BrowseComponentsButton } from "../ui/BrowseComponentsButton";
 import Features from "./Features";

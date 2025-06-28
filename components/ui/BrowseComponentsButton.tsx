@@ -3,7 +3,7 @@
 import { Button } from "./button";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
-import { ArrowDownRight, ArrowRight } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import Link from "next/link";
 
 type Theme = "dark" | "light";
