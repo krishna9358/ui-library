@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -170,7 +170,6 @@ export default function ParticlesBackground({
 
         const animate = () => {
             const isDark = document.documentElement.classList.contains("dark");
-            const scheme = isDark ? COLOR_SCHEME.dark : COLOR_SCHEME.light;
 
             ctx.fillStyle = isDark
                 ? "rgba(0, 0, 0, 0.1)"

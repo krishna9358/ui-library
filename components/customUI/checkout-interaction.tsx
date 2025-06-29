@@ -6,7 +6,7 @@ import { Minus, Plus, ShoppingCart, X, CreditCard } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import NumberFlow from "@number-flow/react";
+// import NumberFlow from "@number-flow/react";
 
 interface Product {
     id: string;
@@ -299,7 +299,7 @@ export default function CheckoutInteraction({
                                 layout
                                 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 inline-block min-w-[80px] text-right"
                             >
-                                <NumberFlow
+                                {/* <NumberFlow
                                     value={totalPrice}
                                     willChange
                                     format={{
@@ -314,7 +314,7 @@ export default function CheckoutInteraction({
                                         duration: 400,
                                         easing: "ease-out",
                                     }}
-                                />
+                                /> */}
                             </motion.span>
                         </div>
                         <Button size="sm" className="w-full gap-2">

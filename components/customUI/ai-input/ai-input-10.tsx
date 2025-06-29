@@ -60,7 +60,7 @@ export default function AIInput_10() {
         minHeight: 40,
         maxHeight: 200,
     });
-    const { fileName, fileInputRef, handleFileSelect, clearFile } =
+    const {  fileInputRef } =
         useFileInput({ accept: "image/*", maxSize: 5 });
 
 

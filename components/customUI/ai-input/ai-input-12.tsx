@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
+import Image from "next/image";
 
 const AVATARS = [
     {
@@ -66,7 +67,7 @@ export default function AIInput_12() {
                                                         i > 0 ? "-8px" : "0",
                                                 }}
                                             >
-                                                <img
+                                                <Image
                                                     src={avatar.src}
                                                     alt={`Avatar ${i + 1}`}
                                                     className="w-full h-full object-cover rounded-full border-[1.5px] border-white dark:border-none bg-white dark:bg-transparent ring-2 ring-black/5 dark:ring-0"

@@ -4,10 +4,10 @@ import { useState, useRef, type RefObject } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/lib/utils";
-import type { ButtonProps } from "@/components/ui/button";
 import { MousePointerClick } from "lucide-react";
+import { VariantProps } from "class-variance-authority";
 
-interface ParticleButtonProps extends ButtonProps {
+interface ParticleButtonProps extends React.ComponentProps<"button">, VariantProps<typeof Button> {
     onSuccess?: () => void;
     successDuration?: number;
 }
