@@ -17,15 +17,11 @@ import Features from "./Features";
 import Image from "next/image";
 import Link from "next/link";
 import AIInput_01 from "../customUI/ai-input/ai-input-01";
-import { Avatar } from "../ui/avatar";
-import BentoGrid from "../customUI/bento-grid";
-import AvatarPicker from "../customUI/avatar/avatar-picker";
-import CheckoutInteraction from "../customUI/checkout-interaction";
-import CurrencyTransfer from "../customUI/card/currency-transfer";
-import HeroGeometric from "../customUI/hero-section/hero-geometric";
-import MatrixText from "../customUI/text/matrix-text";
-import Toolbar from "../customUI/toolbar";
-import VercelV0Chat from "../customUI/ai-input/vercel-v0-chat";
+import Card08 from "../customUI/card/card-08";
+import Card02 from "../customUI/card/card-02";
+import { Btn14 } from "../customUI/button/btn-14";
+import Btn03 from "../customUI/button/btn-03";
+import Input09 from "../customUI/input/input-09";
 
 const HeroSection = () => {
   return (
@@ -104,7 +100,7 @@ const HeroSection = () => {
             <span className="text-sm text-zinc-500 dark:text-zinc-400 block text-center mb-2">
               {"<Card/>"}
             </span>
-            {/* <Card08 href="/docs/components/card" /> */}
+            <Card08 href="/docs/components/card" />
           </div>
 
           {/* Action Search Bar */}
@@ -113,10 +109,10 @@ const HeroSection = () => {
               Components
             </span>
             {/* <ActionSearchBar
-                            actions={allActions}
+                            // actions={allActions}
                             defaultOpen={true}
                         /> */}
-            {/* <Card02 /> */}
+            <Card02 />
           </div>
         </motion.div>
 
@@ -150,10 +146,10 @@ const HeroSection = () => {
             </span>
             <div className="w-full h-48 rounded-xl  border border-zinc-200 dark:border-zinc-800 flex flex-col items-center justify-center gap-3">
               <Link href="/docs/components/button">
-                {/* <Btn14 label="Bring me" className=" w-42 py-5" /> */}
+                <Btn14 label="Bring me" className=" w-42 py-5" />
               </Link>
               <Link href="/docs/components/button">
-                {/* <Btn03 className=" w-42 py-5" /> */}
+                <Btn03 className=" w-42 py-5" />
               </Link>
             </div>
           </div>
@@ -164,7 +160,7 @@ const HeroSection = () => {
               Input
             </span>
             <Link href="/docs/components/input">
-              {/* <Input09 /> */}
+              <Input09 />
             </Link>
           </div>
         </motion.div>

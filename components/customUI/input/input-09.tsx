@@ -24,10 +24,16 @@ const animations = {
 } as const;
 
 const avatarUrls = [
-    "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-01-n0x8HFv8EUetf9z6ht0wScJKoTHqf8.png",
-    "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-02-albo9B0tWOSLXCVZh9rX9KFxXIVWMr.png",
-    "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-03-JateJIUhtd3PXynaMG9TDWQ55j5AVP.png",
-    "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-04-uuYHWIRvVPi01gEt6NwnGyjqLeeZhz.png",
+    // "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-01-n0x8HFv8EUetf9z6ht0wScJKoTHqf8.png",
+    // "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-02-albo9B0tWOSLXCVZh9rX9KFxXIVWMr.png",
+    // "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-03-JateJIUhtd3PXynaMG9TDWQ55j5AVP.png",
+    // "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-04-uuYHWIRvVPi01gEt6NwnGyjqLeeZhz.png",
+        "https://freepngimg.com/thumb/avengers/117309-picture-infinity-avengers-war-download-free-image.png",
+    "https://freepngimg.com/thumb/avengers/80679-alliance-superhero-thor-mercenary-deadpool-avengers-marvel-thumb.png",
+    "https://freepngimg.com/thumb/avengers/117318-infinity-avengers-war-free-hq-image.png",
+    "https://freepngimg.com/thumb/avengers/117299-infinity-avengers-war-free-download-png-hq.png",
+
+
 ] as const;
 
 export default function Input09() {
@@ -67,10 +73,10 @@ export default function Input09() {
             >
                 <Image
                     src={avatarUrls[i % avatarUrls.length]}
-                    width={96}
-                    height={96}
+                    width={50}
+                    height={50}
                     alt={`Team member ${i + 1}`}
-                    className="rounded-full object-cover"
+                    className="rounded-full object-fit ml-6"
                 />
             </motion.div>
         ));

@@ -20,7 +20,7 @@ interface Card02Props {
 const defaultProfile = {
     name: "Eugene K",
     role: "Senior Developer",
-    image: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-01-n0x8HFv8EUetf9z6ht0wScJKoTHqf8.png",
+    image: "https://wallpapers.com/images/hd/comic-style-avatar-png-ljo78-amlj8spz1buzvl4r.png",
     status: "Open to Work",
     skills: [
         { name: "Frontend", level: 5 },

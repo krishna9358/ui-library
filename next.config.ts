@@ -6,6 +6,25 @@ const withMDX = createMDX();
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'wallpapers.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pinimg.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'freepngimg.com',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default withMDX(nextConfig);
