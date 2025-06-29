@@ -13,12 +13,12 @@ interface Profile02Props {
 }
 
 const defaultProfile = {
-    name: "Alex Thompson",
-    role: "Product Designer",
+    name: "Krishna Mohan",
+    role: "Developer",
     avatar: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-02-albo9B0tWOSLXCVZh9rX9KFxXIVWMr.png",
-    location: "San Francisco, CA",
-    email: "hello@codesnippetui.com",
-    website: "https://ui.codesnipet.dev/",
+    location: "Jaipur, Rajasthan",
+    email: "krishanmohank974@gmail.co",
+    website: "https://ui.krishnamohan.tech",
     bio: "Designing interfaces that bridge the gap between complexity and simplicity.",
 } satisfies Required<Profile02Props>;
 

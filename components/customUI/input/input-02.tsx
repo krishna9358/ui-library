@@ -21,9 +21,9 @@ interface TagInputProps {
     placeholder?: string;
     error?: string;
 }
-const defaultKokonutTag: Tag = {
-    id: "kokonut-ui",
-    label: "codesnippetui",
+const defaultUITag: Tag = {
+    id: "You&I-ui",
+    label: "You&I ui",
     color: "bg-indigo-100 text-indigo-700 border border-indigo-200 dark:bg-indigo-900/30 dark:text-indigo-300 dark:border-indigo-700/30",
 };
 
@@ -38,7 +38,7 @@ const tagStyles = {
 
 export default function Input_02({
     onChange,
-    defaultTags = [defaultKokonutTag], // Set codesnippetui as default
+    defaultTags = [defaultUITag], 
     suggestions = [
         { id: "nextjs", label: "Next.js" },
         { id: "react", label: "React" },
@@ -64,7 +64,7 @@ export default function Input_02({
         .filter(
             (suggestion) =>
                 suggestion.label.toLowerCase().includes(input.toLowerCase()) &&
-                !tags.find((tag) => tag.id === suggestion.id)
+                !tags.find((tag : any) => tag.id === suggestion.id)
         )
         .slice(0, 5);
 
@@ -120,7 +120,7 @@ export default function Input_02({
                     "flex items-center flex-row flex-wrap gap-2 sm:gap-1.5 relative"
                 )}
             >
-                {tags.map((tag) => (
+                {tags.map((tag:any) => (
                     <span
                         key={tag.id}
                         className={cn(

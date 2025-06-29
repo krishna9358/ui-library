@@ -16,11 +16,11 @@ interface Profile04Props {
 }
 
 const defaultProfile = {
-    name: "Kokonut",
+    name: "You&I",
     role: "Making apps",
     avatar: "https://ferf1mheo22r9ira.public.blob.vercel-storage.com/avatar-04-uuYHWIRvVPi01gEt6NwnGyjqLeeZhz.png",
     subscription: "Maker",
-    email: "hello@codesnippetui.com",
+    email: "krishanmohank974@gmail.com",
     level: 42,
     currentExp: 2800,
     maxExp: 4000,
