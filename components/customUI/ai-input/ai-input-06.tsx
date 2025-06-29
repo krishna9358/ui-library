@@ -1,79 +1,66 @@
 "use client";
 
-import { CornerRightUp, Mic } from "lucide-react";
+import { CornerRightUp } from "lucide-react";
 import { useState } from "react";
-import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
 
-export default function AIInput06() {
-  const { textareaRef, adjustHeight } = useAutoResizeTextarea({
-    minHeight: 56,
-    maxHeight: 200,
-  });
-  const [inputValue, setInputValue] = useState("");
+export default function AIInput_06() {
+    const [inputValue, setInputValue] = useState("");
+    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+        minHeight: 50,
+        maxHeight: 200,
+    });
 
-  const handleSubmit = () => {
-    console.log("Submitting:", inputValue);
-    setInputValue("");
-    adjustHeight(true);
-  };
+    const handleSubmit = () => {
+        setInputValue("");
+        adjustHeight(true);
+    };
 
-  return (
-    <div className="w-full py-4">
-      <div className="relative max-w-2xl w-full mx-auto">
-        <div className="relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 rounded-xl blur-sm opacity-30"></div>
-          <div className="relative bg-black rounded-xl border border-slate-800">
-            <Textarea
-              placeholder="// Ask about smart contracts, Web3 APIs, or crypto..."
-              className={cn(
-                "w-full bg-transparent border-none pl-6 pr-20 py-4",
-                "placeholder:text-green-400/70 placeholder:font-mono",
-                "text-green-400 font-mono text-sm",
-                "focus-visible:ring-0 focus-visible:ring-offset-0",
-                "resize-none overflow-y-auto",
-                "min-h-[56px] max-h-[200px]"
-              )}
-              ref={textareaRef}
-              value={inputValue}
-              onChange={(e) => {
-                setInputValue(e.target.value);
-                adjustHeight();
-              }}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  handleSubmit();
-                }
-              }}
-            />
-            
-            <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
-              <button
-                type="button"
-                className="p-2 rounded-lg hover:bg-slate-800 transition-colors group"
-              >
-                <Mic className="w-4 h-4 text-slate-500 group-hover:text-green-400 transition-colors" />
-              </button>
-              
-              {inputValue && (
-                <button
-                  onClick={handleSubmit}
-                  type="button"
-                  className="p-2 rounded-lg bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white transition-all duration-200 animate-pulse"
-                >
-                  <CornerRightUp className="w-4 h-4" />
-                </button>
-              )}
+    return (
+        <div className="w-full py-4">
+            <div className="relative max-w-xl w-full mx-auto flex items-start flex-col gap-2">
+                <div className="relative max-w-xl w-full mx-auto">
+                    <Textarea
+                        ref={textareaRef}
+                        id="ai-input-06"
+                        placeholder="Ask me anything!"
+                        className={cn(
+                            "max-w-xl bg-black/5 dark:bg-white/5 w-full rounded-3xl pl-6 pr-12 py-4 placeholder:text-black/70 dark:placeholder:text-white/70 border-none ring-black/30 dark:ring-white/30 text-black dark:text-white resize-none text-wrap leading-[1.2]",
+                            "min-h-[56px]"
+                        )}
+                        value={inputValue}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                                if (e.shiftKey) {
+                                    return;
+                                }
+                                e.preventDefault();
+                                handleSubmit();
+                            }
+                        }}
+                        onChange={(e) => {
+                            setInputValue(e.target.value);
+                            adjustHeight();
+                        }}
+                    />
+                    <button
+                        className="absolute right-3 top-1/2 -translate-y-1/2 rounded-xl bg-black/5 dark:bg-white/5 py-1 px-1"
+                        type="button"
+                    >
+                        <CornerRightUp
+                            className={cn(
+                                "w-4 h-4 transition-opacity dark:text-white",
+                                inputValue ? "opacity-100" : "opacity-30"
+                            )}
+                        />
+                    </button>
+                </div>
+                <p className="ml-4 text-xs text-black/40 dark:text-white/40">
+                    {inputValue.length + 20}/100 characters
+                </p>
             </div>
-          </div>
         </div>
-        
-        <div className="mt-2 text-xs font-mono text-green-400/60 text-center">
-          &gt; Ready for Web3 queries...
-        </div>
-      </div>
-    </div>
-  );
+    );
 }

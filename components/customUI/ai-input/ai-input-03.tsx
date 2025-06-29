@@ -1,74 +1,161 @@
 "use client";
 
-import { CornerRightUp, Mic } from "lucide-react";
+import {
+    Text,
+    CheckCheck,
+    ArrowDownWideNarrow,
+    CornerRightDown,
+} from "lucide-react";
 import { useState } from "react";
-import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
+import { cn } from "@/lib/utils";
 import { useAutoResizeTextarea } from "@/hooks/use-auto-resize-textarea";
 
-export default function AIInput03() {
-  const { textareaRef, adjustHeight } = useAutoResizeTextarea({
-    minHeight: 60,
-    maxHeight: 180,
-  });
-  const [inputValue, setInputValue] = useState("");
+const ITEMS = [
+    {
+        text: "Summary",
+        icon: Text,
+        colors: {
+            icon: "text-orange-600",
+            border: "border-orange-500",
+            bg: "bg-orange-100",
+        },
+    },
+    {
+        text: "Fix Spelling and Grammar",
+        icon: CheckCheck,
+        colors: {
+            icon: "text-emerald-600",
+            border: "border-emerald-500",
+            bg: "bg-emerald-100",
+        },
+    },
+    {
+        text: "Make shorter",
+        icon: ArrowDownWideNarrow,
+        colors: {
+            icon: "text-purple-600",
+            border: "border-purple-500",
+            bg: "bg-purple-100",
+        },
+    },
+];
 
-  const handleSubmit = () => {
-    console.log("Submitting:", inputValue);
-    setInputValue("");
-    adjustHeight(true);
-  };
+export default function AIInput_03() {
+    const [inputValue, setInputValue] = useState("");
+    const [selectedItem, setSelectedItem] = useState<string | null>(
+        "Make shorter"
+    );
+    const { textareaRef, adjustHeight } = useAutoResizeTextarea({
+        minHeight: 52,
+        maxHeight: 200,
+    });
 
-  return (
-    <div className="w-full py-4">
-      <div className="relative max-w-3xl w-full mx-auto">
-        <div className="relative bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 p-[1px] rounded-3xl">
-          <div className="bg-white dark:bg-slate-950 rounded-3xl">
-            <Textarea
-              placeholder="Describe your Web3 project or ask for smart contract help..."
-              className={cn(
-                "w-full bg-transparent border-none pl-8 pr-20 py-6",
-                "placeholder:text-slate-400 dark:placeholder:text-slate-500",
-                "text-slate-900 dark:text-slate-100 text-lg",
-                "focus-visible:ring-0 focus-visible:ring-offset-0",
-                "resize-none overflow-y-auto",
-                "min-h-[60px] max-h-[180px]"
-              )}
-              ref={textareaRef}
-              value={inputValue}
-              onChange={(e) => {
-                setInputValue(e.target.value);
-                adjustHeight();
-              }}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  handleSubmit();
-                }
-              }}
-            />
-            
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-3">
-              <button
-                type="button"
-                className="p-3 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
-              >
-                <Mic className="w-5 h-5 text-slate-500 group-hover:text-purple-600 transition-colors" />
-              </button>
-              
-              {inputValue && (
-                <button
-                  onClick={handleSubmit}
-                  type="button"
-                  className="p-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white transition-all duration-300 animate-scale-in shadow-lg"
-                >
-                  <CornerRightUp className="w-5 h-5" />
-                </button>
-              )}
+    const toggleItem = (itemText: string) => {
+        setSelectedItem((prev) => (prev === itemText ? null : itemText));
+    };
+
+    const currentItem = selectedItem
+        ? ITEMS.find((item) => item.text === selectedItem)
+        : null;
+
+    const handleSubmit = () => {
+        setInputValue("");
+        setSelectedItem(null);
+        adjustHeight(true);
+    };
+
+    return (
+        <div className="w-full py-4">
+            <div className="relative max-w-xl w-full mx-auto">
+                <div className="relative border border-black/10 dark:border-white/10 focus-within:border-black/20 dark:focus-within:border-white/20 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03]">
+                    <div className="flex flex-col">
+                        <div className="overflow-y-auto max-h-[200px]">
+                            <Textarea
+                                ref={textareaRef}
+                                id="ai-input-03"
+                                placeholder="Enter your text here..."
+                                className={cn(
+                                    "max-w-xl w-full rounded-2xl pr-10 pt-3 pb-3 placeholder:text-black/70 dark:placeholder:text-white/70 border-none focus:ring-3 text-black dark:text-white resize-none text-wrap bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 leading-[1.2]",
+                                    "min-h-[52px]",
+                                    "max-h-[200px]"
+                                )}
+                                value={inputValue}
+                                onChange={(e) => {
+                                    setInputValue(e.target.value);
+                                    adjustHeight();
+                                }}
+                                onKeyDown={(e) => {
+                                    if (e.key === "Enter" && !e.shiftKey) {
+                                        e.preventDefault();
+                                        handleSubmit();
+                                    }
+                                }}
+                            />
+                        </div>
+
+                        <div className="h-12 bg-transparent">
+                            {currentItem && (
+                                <div className="absolute left-3 bottom-3 z-10">
+                                    <button
+                                        type="button"
+                                        onClick={handleSubmit}
+                                        className={cn(
+                                            "inline-flex items-center gap-1.5",
+                                            "border shadow-xs rounded-md px-2 py-0.5 text-xs font-medium",
+                                            "animate-fadeIn hover:bg-black/5 dark:hover:bg-white/5 transition-colors duration-200",
+                                            currentItem.colors.bg,
+                                            currentItem.colors.border
+                                        )}
+                                    >
+                                        <currentItem.icon
+                                            className={`w-3.5 h-3.5 ${currentItem.colors.icon}`}
+                                        />
+                                        <span
+                                            className={currentItem.colors.icon}
+                                        >
+                                            {selectedItem}
+                                        </span>
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+
+                    <CornerRightDown
+                        className={cn(
+                            "absolute right-3 top-3 w-4 h-4 transition-all duration-200 dark:text-white",
+                            inputValue
+                                ? "opacity-100 scale-100"
+                                : "opacity-30 scale-95"
+                        )}
+                    />
+                </div>
             </div>
-          </div>
+            <div className="flex flex-wrap gap-1.5 mt-2 max-w-xl mx-auto justify-start px-4">
+                {ITEMS.filter((item) => item.text !== selectedItem).map(
+                    ({ text, icon: Icon, colors }) => (
+                        <button
+                            type="button"
+                            key={text}
+                            className={cn(
+                                "px-3 py-1.5 text-xs font-medium rounded-full",
+                                "border transition-all duration-200",
+                                "border-black/10 dark:border-white/10 bg-white dark:bg-gray-900 hover:bg-black/5 dark:hover:bg-white/5",
+                                "shrink-0"
+                            )}
+                            onClick={() => toggleItem(text)}
+                        >
+                            <div className="flex items-center gap-1.5">
+                                <Icon className={cn("h-4 w-4", colors.icon)} />
+                                <span className="text-black/70 dark:text-white/70 whitespace-nowrap">
+                                    {text}
+                                </span>
+                            </div>
+                        </button>
+                    )
+                )}
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }

@@ -17,12 +17,15 @@ import Features from "./Features";
 import Image from "next/image";
 import Link from "next/link";
 import AIInput_01 from "../customUI/ai-input/ai-input-01";
-import AIInput02 from "../customUI/ai-input/ai-input-02";
-import AIInput03 from "../customUI/ai-input/ai-input-03";
-import AIInput04 from "../customUI/ai-input/ai-input-04";
-import AIInput06 from "../customUI/ai-input/ai-input-06";
-import AIInput09 from "../customUI/ai-input/ai-input-09";
-import AIInput10 from "../customUI/ai-input/ai-input-10";
+import { Avatar } from "../ui/avatar";
+import BentoGrid from "../customUI/bento-grid";
+import AvatarPicker from "../customUI/avatar/avatar-picker";
+import CheckoutInteraction from "../customUI/checkout-interaction";
+import CurrencyTransfer from "../customUI/card/currency-transfer";
+import HeroGeometric from "../customUI/hero-section/hero-geometric";
+import MatrixText from "../customUI/text/matrix-text";
+import Toolbar from "../customUI/toolbar";
+import VercelV0Chat from "../customUI/ai-input/vercel-v0-chat";
 
 const HeroSection = () => {
   return (
@@ -167,21 +170,7 @@ const HeroSection = () => {
         </motion.div>
         </div>
       </div>
-      {/* testing */}
-      <div className="w-full text-center items-center ">
 
-   
-      <AIInput_01 />
-      <AIInput02 />
-      <AIInput03 />
-      <AIInput04 />
-      {/* <AIInput05 /> */}
-      <AIInput06 />
-      {/* <AIInput07 /> */}
-      {/* <AIInput08 /> */}
-      <AIInput09 />
-      <AIInput10 />
-      </div>
 
     </main>
   );
