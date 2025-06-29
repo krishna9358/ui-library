@@ -17,6 +17,15 @@ import Features from "./Features";
 import Image from "next/image";
 import Link from "next/link";
 import AIInput_01 from "../customUI/ai-input/ai-input-01";
+import AIInput02 from "../customUI/ai-input/ai-input-02";
+import AIInput03 from "../customUI/ai-input/ai-input-03";
+import AIInput04 from "../customUI/ai-input/ai-input-04";
+import AIInput05 from "../customUI/ai-input/ai-input-05";
+import AIInput06 from "../customUI/ai-input/ai-input-06";
+import AIInput07 from "../customUI/ai-input/ai-input-07";
+import AIInput08 from "../customUI/ai-input/ai-input-08";
+import AIInput09 from "../customUI/ai-input/ai-input-09";
+import AIInput10 from "../customUI/ai-input/ai-input-10";
 
 const HeroSection = () => {
   return (
@@ -161,6 +170,22 @@ const HeroSection = () => {
         </motion.div>
         </div>
       </div>
+      {/* testing */}
+      <div className="w-full text-center items-center ">
+
+   
+      <AIInput_01 />
+      <AIInput02 />
+      <AIInput03 />
+      <AIInput04 />
+      {/* <AIInput05 /> */}
+      <AIInput06 />
+      {/* <AIInput07 /> */}
+      {/* <AIInput08 /> */}
+      <AIInput09 />
+      <AIInput10 />
+      </div>
+
     </main>
   );
 };

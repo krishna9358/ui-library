@@ -173,15 +173,15 @@ export default function Features() {
                     className={cn(
                         "text-black dark:text-white flex flex-col items-center gap-2 relative col-span-1 col-start-3 md:col-auto"
                     )}
-                    onMouseEnter={() => handleMouseEnter("React")}
+                    onMouseEnter={() => handleMouseEnter("FumaDocs")}
                     onMouseLeave={handleMouseLeave}
                 >
-                    <Image src={"/icons/fumadocs.png"} alt={"reacticon"} width={34} height={34}/>
+                    <Image src={"/icons/fumadocs.png"} alt={"fumadocs icons"} width={34} height={34}/>
                     {/* <ReactIcon className="w-8 h-8" aria-label="React" /> */}
                     <motion.span
                         animate={{
-                            scale: hoveredItem === "React" ? 1.1 : 1,
-                            fontWeight: hoveredItem === "React" ? 500 : 400,
+                            scale: hoveredItem === "fumadocs" ? 1.1 : 1,
+                            fontWeight: hoveredItem === "fumadocs" ? 500 : 400,
                         }}
                         className="text-xs text-center mt-1 whitespace-nowrap"
                     >
